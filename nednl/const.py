@@ -1,18 +1,7 @@
 """
 Source: https://ned.nl/nl/handleiding-api
 """
-from enum import Enum
-
-
-class PrettyEnum(Enum):
-    def __new__(cls, value, label):
-        obj = object.__new__(cls)
-        obj._value_ = value
-        obj.label = label
-        return obj
-
-    def __str__(self):
-        return self.label
+from .helpers import PrettyEnum
 
 
 class Activity(PrettyEnum):

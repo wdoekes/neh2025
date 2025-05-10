@@ -1,10 +1,41 @@
-from datetime import date
 from typing import NamedTuple
 
 from . import const
+from .helpers import make_query
 
 
-class UtilizationQuery(NamedTuple):
+@make_query(api='activities')
+class Activity(NamedTuple):
+    pass
+
+
+@make_query(api='classifications')
+class Classification(NamedTuple):
+    pass
+
+
+@make_query(api='granularities')
+class Granularity(NamedTuple):
+    pass
+
+
+@make_query(api='granularity_time_zones')
+class GranularityTimeZone(NamedTuple):
+    pass
+
+
+@make_query(api='points')
+class Point(NamedTuple):
+    pass
+
+
+@make_query(api='types')
+class Type(NamedTuple):
+    pass
+
+
+@make_query(api='utilizations')
+class Utilization(NamedTuple):
     point: int = const.Point.NEDERLAND
     type: int = const.Type.ALL.value
     granularity: int = const.Granularity.HOUR
@@ -14,25 +45,3 @@ class UtilizationQuery(NamedTuple):
     validfrom_after: str = None
     validfrom_before: str = None
     order_validfrom: int = 'asc'
-
-    def marshall(self, value):
-        if isinstance(value, str):
-            return value
-        if isinstance(value, int):
-            return str(value)
-        if isinstance(value, date):
-            return value.strftime('%Y-%m-%d')
-        if isinstance(value, const.PrettyEnum):
-            return str(value.value)
-        raise NotImplementedError((type(value), value))
-
-    async def exec(self, api):
-        params = {}
-        for field in self._fields:
-            if '_' in field:
-                key = '{}[{}]'.format(*field.split('_', 1))
-            else:
-                key = field
-            params[key] = self.marshall(getattr(self, field))
-
-        return await api.call('GET', 'utilizations', params=params)
