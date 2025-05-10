@@ -43,8 +43,8 @@ async def main():
         else:
             for type_ in (
                     nednl.const.Type.ALL,
-                    nednl.const.Type.WIND,
-                    nednl.const.Type.SOLAR,
+                    nednl.const.Type.WIND,  # <- PROVIDING, interesting
+                    nednl.const.Type.SOLAR,  # <- PROVIDING, interesting
                     nednl.const.Type.BIOGAS,
                     nednl.const.Type.HEATPUMP,
                     nednl.const.Type.AIRHEATPUMP,
@@ -60,26 +60,27 @@ async def main():
                     nednl.const.Type.WOODACTIVEHEATING,
                     nednl.const.Type.WOODCOMFORTHEATING,
                     nednl.const.Type.WINDOFFSHORE,
-                    nednl.const.Type.FOSSILGASPOWER,
-                    nednl.const.Type.FOSSILHARDCOAL,
-                    nednl.const.Type.NUCLEAR,
-                    nednl.const.Type.WASTEPOWER,
+                    nednl.const.Type.FOSSILGASPOWER,  # <- PROVIDING, interesting
+                    nednl.const.Type.FOSSILHARDCOAL,  # <- PROVIDING, interesting
+                    nednl.const.Type.NUCLEAR,  # <- PROVIDING, interesting
+                    nednl.const.Type.WASTEPOWER,  # <- PROVIDING, interesting
                     nednl.const.Type.WINDOFFSHOREB,
                     nednl.const.Type.NATURALGAS,
                     nednl.const.Type.BIOMETHANE,
-                    nednl.const.Type.BIOMASSPOWER,
-                    nednl.const.Type.OTHERPOWER,
-                    nednl.const.Type.ELECTRICITYMIX,
+                    nednl.const.Type.BIOMASSPOWER,  # <- PROVIDING, interesting
+                    nednl.const.Type.OTHERPOWER,  # <- PROVIDING, interesting
+                    nednl.const.Type.ELECTRICITYMIX,  # <- PROVIDING, unsure what to do with this
                     nednl.const.Type.GASMIX,
                     nednl.const.Type.GASPRIVATEDISTRIBUTIONCOMPANIES,
                     nednl.const.Type.GASDISTRIBUTION,
-                    nednl.const.Type.WKK_TOTAL,
+                    nednl.const.Type.WKK_TOTAL,  # <- PROVIDING, interesting
                     nednl.const.Type.SOLARTHERMAL,
                     nednl.const.Type.WINDOFFSHOREC,
                     nednl.const.Type.INDUSTRIALCONSUMERSGASCOMBINATION,
                     nednl.const.Type.INDUSTRIALCONSUMERSPOWERGASCOMBINATION,
                     nednl.const.Type.LOCALDISTRIBUTIONCOMPANIESCOMBINATION,
                     nednl.const.Type.ALLCONSUMINGGAS,
+                    nednl.const.Type.ELECTRICITYLOAD,  # <- PROVIDING, interesting
                     ):
                 print()
                 print(type_)

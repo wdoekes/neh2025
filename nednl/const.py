@@ -137,3 +137,4 @@ class Type(Const):
     INDUSTRIALCONSUMERSPOWERGASCOMBINATION = (54, 'IndustrialConsumersPowerGasCombination')     # from DOCS only
     LOCALDISTRIBUTIONCOMPANIESCOMBINATION = (55, 'LocalDistributionCompaniesCombination')       # from DOCS only
     ALLCONSUMINGGAS = (56, 'AllConsumingGas')                                       # from DOCS only
+    ELECTRICITYLOAD = (59, 'ElectricityLoad')                                       # from other DOCS only
