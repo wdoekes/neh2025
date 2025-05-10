@@ -1,6 +1,6 @@
 from typing import NamedTuple
 
-from . import const
+from . import const, response
 from .helpers import make_query
 
 
@@ -45,3 +45,7 @@ class Utilization(NamedTuple):
     validfrom_after: str = None
     validfrom_before: str = None
     order_validfrom: str = 'asc'
+
+    async def list(self, api):
+        response_data = await self.exec(api)
+        return response.Utilizations.from_response(response_data)
