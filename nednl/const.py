@@ -1,10 +1,10 @@
 """
 Source: https://ned.nl/nl/handleiding-api
 """
-from .helpers import PrettyEnum
+from .helpers import Const
 
 
-class Activity(PrettyEnum):
+class Activity(Const):
     """
     /Geeft het activiteitstype aan: opwek (providing) of consumptie (consuming)/
     """
@@ -17,7 +17,7 @@ class Activity(PrettyEnum):
     STORAGE = (7, 'Storage')
 
 
-class Classification(PrettyEnum):
+class Classification(Const):
     """
     /Geeft het Classificatietype aan. (Bijv. Near-realtime of Voorspelling)/
     """
@@ -26,7 +26,7 @@ class Classification(PrettyEnum):
     BACKCAST = (3, 'Backcast')
 
 
-class Granularity(PrettyEnum):
+class Granularity(Const):
     """
     /De data is gegroepeerd op een bepaalde granulariteit of
     tijdsinterval. Hiernaast zie je de beschikbare tijdsintervallen./
@@ -41,7 +41,7 @@ class Granularity(PrettyEnum):
     YEAR = (8, 'Year')
 
 
-class GranularityTimeZone(PrettyEnum):
+class GranularityTimeZone(Const):
     """
     /Elke granulariteit is geldig voor een bepaalde tijdzone, dit
     gegevensrecord bevat de naam van deze tijdzone./
@@ -53,7 +53,7 @@ class GranularityTimeZone(PrettyEnum):
     EUROPE_AMSTERDAM = (1, 'Europe/Amsterdam')
 
 
-class Point(PrettyEnum):
+class Point(Const):
     """
     /Over welke geografische gebied moet de data gaan?/
     """
@@ -95,7 +95,7 @@ class Point(PrettyEnum):
     WINDPARK_HOLLANDSE_KUST_NOORD = (36, 'Windpark Hollandse Kust Noord')   # from DOCS only
 
 
-class Type(PrettyEnum):
+class Type(Const):
     """
     /Wat is het type energiedrager?/
     """

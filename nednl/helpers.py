@@ -2,7 +2,7 @@ from datetime import date
 from enum import Enum
 
 
-class PrettyEnum(Enum):
+class Const(Enum):
     """
     Create a constant like Point.GRONINGEN and Point.NEDERLAND.
     """
@@ -45,7 +45,7 @@ def _hydra_members_to_python_const(response):
 
     # Turn the results into constants below.
     ret = [
-        f'class {name}(PrettyEnum):', '    """', '    ...docs...', '    """']
+        f'class {name}(Const):', '    """', '    ...docs...', '    """']
     for id_, key, label in values:
         ret.append(f"    {key} = ({id_}, '{label}')")
     ret.extend(['', ''])
@@ -76,7 +76,7 @@ def make_query(api):
                 return str(value)
             if isinstance(value, date):
                 return value.strftime('%Y-%m-%d')
-            if isinstance(value, PrettyEnum):
+            if isinstance(value, Const):
                 return str(value.value)
             raise NotImplementedError((type(value), value))
 

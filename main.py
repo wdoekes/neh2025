@@ -17,7 +17,7 @@ async def print_nednl_const(api):
     print('"""')
     print('Source: https://ned.nl/nl/handleiding-api')
     print('"""')
-    print('from .helpers import PrettyEnum')
+    print('from .helpers import Const')
     for query in (
             nednl.query.Activity(),
             nednl.query.Classification(),

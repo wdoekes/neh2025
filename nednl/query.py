@@ -37,11 +37,11 @@ class Type(NamedTuple):
 @make_query(api='utilizations')
 class Utilization(NamedTuple):
     point: int = const.Point.NEDERLAND
-    type: int = const.Type.ALL.value
+    type: int = const.Type.ALL
     granularity: int = const.Granularity.HOUR
-    granularitytimezone: int = 0  # FIXME: 0=UTC
-    classification: int = 1       # FIXME: 1=forecast
+    granularitytimezone: int = const.GranularityTimeZone.UTC
+    classification: int = const.Classification.FORECAST
     activity: int = const.Activity.PROVIDING
     validfrom_after: str = None
     validfrom_before: str = None
-    order_validfrom: int = 'asc'
+    order_validfrom: str = 'asc'
