@@ -8,7 +8,7 @@ import nednl.api
 import nednl.const
 import nednl.query
 
-from settings import NEDNL_API_KEY
+from settings import CACHE_DIR, NEDNL_API_KEY
 
 
 async def print_nednl_const(api):
@@ -34,6 +34,8 @@ async def print_nednl_const(api):
 
 async def main():
     async with nednl.api.Api.with_api_key(NEDNL_API_KEY) as api:
+        api.set_cache_dir(CACHE_DIR)
+
         today = date.today()
         today_plus_1 = today + timedelta(days=1)
 
