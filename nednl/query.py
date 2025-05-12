@@ -36,6 +36,7 @@ class Type(NamedTuple):
 
 @make_query(api='utilizations')
 class Utilization(NamedTuple):
+    itemsPerPage: int = 2000
     point: int = const.Point.NEDERLAND
     type: int = const.Type.ALL
     granularity: int = const.Granularity.HOUR
